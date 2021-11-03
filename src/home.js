@@ -1,38 +1,69 @@
-const home_creator = (() => {
+const home_creator = () => {
     const content_container = document.getElementById('content');
     let last_div = content_container;
+    let newElement
 
-    const div_creator = (idDiv, idElement, elementType, text) => {
+
+    const div_creator = (idDiv) => {
         //Se crea el div
         let newDiv = document.createElement("div");
         newDiv.setAttribute("id", idDiv);
-        //Se crea el elemento
-        let newElement = document.createElement(elementType);
-        if (idElement !== '')
-            newElement.setAttribute("id", idElement);
-        if (text !== '' )
-            //Se le asigna el texto
-            newElement.textContent = text;
+        newDiv.setAttribute("class", "element_div");
 
         //Se agrega el nuevo div al ultimo div creado
-        last_div.appendChild(newDiv);
-        //Se agrega el elemento al nuevo div
-        newDiv.appendChild(newElement); 
+        content_container.appendChild(newDiv);
         //Se asignaa la variable el ultimo div creado
         last_div = document.getElementById(idDiv);
 
 
     };
 
-    div_creator('header_div', 'header', 'h1', 'Tienda de comidas');
-    div_creator('img_div', 'img', 'img', '');
-    img.src ="https://media.cntraveler.com/photos/5f5fad3e987090832029b137/master/w_1600%2Cc_limit/50States50Cuisines-2020-AmberDay-Indiana.jpg";
-    //img.src = "https://i.pinimg.com/originals/8c/06/9a/8c069a79b5dfb9ba03918d2f687bb6cb.gif";
-    div_creator('text_div', 'text', 'p', 'El mejor lugar para saborear aquellos platos donde no se consiguen en otro restaurant comun y corriente.');
-    div_creator('text_div2', 'text2', 'p', 'Elaborados con amor y dedicacion por nuestros mejores cocineros para nuestros mas queridos comensales.');
+    //Descripcion
+    div_creator('desc_div');
+    newElement = document.createElement('p');
+    newElement.setAttribute("id", 'text_desc');
+    newElement.setAttribute("class", 'text');
+    newElement.textContent = "El mejor lugar para saborear aquellos platos donde no se consiguen en otro restaurant común y corriente. \r\n Elaborados con amor y dedicación por nuestros mejores cocineros para nuestros mas queridos comensales.\r\n";
+    newElement.textContent += "FF";
+    last_div.appendChild(newElement);
+
+    //Horarios
+    div_creator('horario_div');
+    //Titulo
+    newElement = document.createElement('h2');
+    newElement.setAttribute("id", 'horario_h2');
+    newElement.setAttribute("class", 'text');
+    newElement.textContent = "Horarios\r\n";
+    last_div.appendChild(newElement);
+    //Cuerpo
+    newElement = document.createElement('p');
+    newElement.setAttribute("id", 'horario_desc');
+    newElement.setAttribute("class", 'text');
+    newElement.textContent = "Lunes a Viernes: 9 am - 21 pm \r\n";
+    newElement.textContent += "Sabados: 10 am - 24 pm\r\n";
+    newElement.textContent += "Domingos: 10 am - 20 pm\r\n";
+    newElement.textContent += "Feriados: 9 am - 20 pm\r\n";
+    last_div.appendChild(newElement);
+
+    //Ubicacion
+    div_creator('ubicacion_div');
+    //Titulo
+    newElement = document.createElement('h2');
+    newElement.setAttribute("id", 'ubicacion_h2');
+    newElement.setAttribute("class", 'text');
+    newElement.textContent = "Ubicación\r\n";
+    last_div.appendChild(newElement);
+    //Cuerpo
+    newElement = document.createElement('p');
+    newElement.setAttribute("id", 'ubicacion_desc');
+    newElement.setAttribute("class", 'text');
+    newElement.textContent = "123 Plaza Serrano, Buenos Aires , Argentina";
+    last_div.appendChild(newElement);
 
 
 
-})();
+
+
+};
 
 export default home_creator;

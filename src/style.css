@@ -1,17 +1,135 @@
 html{
     height: 100%;
     width: 100%;
+
 }
 
-h1{
-    text-align: center ;
-}
- 
+
 body{
-    height: 100%;
-    width: auto;
     margin: 0 auto;
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
+    background-image:url("background.jpg") ;
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    /*Para que el footer no se superponga con el cuerpo*/
+    display: grid;
+    /* Titulo| Barra de menu | Contenido | Footer */
+    grid-template-rows: 15% 5% max-content 10%; 
+    /*max-content para que muestre todo el contenido*/
+        
+}
+
+
+#title{
+    text-align: center ;
+    background-color: rgb(43, 44, 44);
+    box-shadow: 0 0 1rem rgb(43, 44, 44);
+    color: azure;
+    font-size: 60px;
+    margin-top: 0;
+
+}
+ 
+/*Botones de navegacion*/
+.tablink{
+    width: 100px;
+    height: 40px;
+    background:black;
+    border: 1px solid white;
+    border-radius: 1em/1em;
+    box-shadow: 0 0 1rem rgb(17, 17, 17);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-shadow: 0.5px 0.5px 0.5px rgb(82, 80, 80);
+    margin-left: 5px;
+    opacity: 0.95;
+}
+
+.tablink:hover {
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+  }
+
+/*Div que contiene cada elemento*/
+.element_div{
+    border-radius: 1em/1em;
+    background-color: rgb(43, 44, 44);
+    box-shadow: 0 0 1rem rgb(43, 44, 44);
+    width: 30%;
+    margin: 0 auto;
+    padding: 20px;
+    opacity: 0.95;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.text{
+    color: azure;
+    white-space: pre-line;
+
+}
+
+.menu_div{
+    width:fit-content;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+}
+
+.menu_div{
+    border-radius: 1em/1em;
+    background-color: rgb(43, 44, 44);
+    box-shadow: 0 0 1rem rgb(43, 44, 44);
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    opacity: 0.95;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+#menu_desc{
+    text-align: center;
+    margin-top: 15%;
+    font-size: 20px;
+
+}
+
+#menu_img{
+    object-fit: cover;
+    padding: 20px;
+    width: 90%;
+    border-radius: 15%;
+}
+
+footer{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    background-color: rgb(43, 44, 44);
+    box-shadow: 0 0 1rem rgb(43, 44, 44);
+    color: azure;
+    font-size: 15px;
+    position:fixed;
+    bottom: 0px;
+    text-align: end;
+    width: 100%;
+
+}
+
+#footer_txt{
+    margin-right: 20px;
+}
+
+/*Estilo del link*/
+a:link{
+    color: azure;
+}
+a:visited {
+    color: azure;
 }
